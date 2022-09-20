@@ -1,9 +1,6 @@
-package com.jpa.model;
+package com.jpa.model.one_to_many;
 
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;

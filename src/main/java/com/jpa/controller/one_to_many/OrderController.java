@@ -1,10 +1,10 @@
-package com.jpa.controller;
+package com.jpa.controller.one_to_many;
 
-import com.jpa.dto.OrderRequest;
-import com.jpa.dto.OrderResponse;
-import com.jpa.model.Customer;
-import com.jpa.repository.CustomerRepo;
-import com.jpa.repository.ProductRepo;
+import com.jpa.dto.one_to_many.OrderRequest;
+import com.jpa.dto.one_to_many.OrderResponse;
+import com.jpa.model.one_to_many.Customer;
+import com.jpa.repository.one_to_many.CustomerRepo;
+import com.jpa.repository.one_to_many.ProductRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;

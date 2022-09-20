@@ -1,4 +1,4 @@
-package com.jpa.dto;
+package com.jpa.dto.one_to_many;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnore;

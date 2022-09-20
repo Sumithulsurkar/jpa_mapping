@@ -1,4 +1,4 @@
-package com.jpa.model;
+package com.jpa.model.one_to_many;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

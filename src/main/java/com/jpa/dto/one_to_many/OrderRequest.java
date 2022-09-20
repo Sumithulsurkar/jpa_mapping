@@ -1,6 +1,6 @@
-package com.jpa.dto;
+package com.jpa.dto.one_to_many;
 
-import com.jpa.model.Customer;
+import com.jpa.model.one_to_many.Customer;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
