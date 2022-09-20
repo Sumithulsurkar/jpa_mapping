@@ -24,8 +24,7 @@ public class Customer {
     @JoinColumn(name="cp_fk", referencedColumnName = "id") //Customer Product Foreign key -> Customer ID will act has FK for Product table
     private List<Product> products;
 
-    public Customer(int id) {
-        this.id = id;
+    public Customer() {
     }
 
     public Customer(int id, String name, String email, String gender, List<Product> products) {

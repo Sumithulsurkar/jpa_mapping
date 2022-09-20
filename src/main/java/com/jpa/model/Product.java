@@ -20,8 +20,7 @@ public class Product {
     private int qty;
     private int price;
 
-    public Product(int pid) {
-        this.pid = pid;
+    public Product() {
     }
 
     public Product(int pid, String productName, int qty, int price) {
