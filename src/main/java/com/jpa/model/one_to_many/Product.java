@@ -1,16 +1,9 @@
 package com.jpa.model.one_to_many;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 
-@ToString
 @Entity
 public class Product {
 

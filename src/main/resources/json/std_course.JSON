@@ -1,0 +1,19 @@
+{
+  "name": "Tony",
+  "age": 28,
+  "dept": "IT",
+  "course": [
+    {
+      "title": "Testing",
+      "abbreviation": "QA",
+      "modules": 12,
+      "fee": 250000.50
+    },
+    {
+      "title": "HR MBA",
+      "abbreviation": "HR",
+      "modules": 15,
+      "fee": 2000
+    }
+  ]
+}

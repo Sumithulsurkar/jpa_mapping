@@ -23,11 +23,11 @@ public class OrderController {
     private ProductRepo productRepo;
 
     /**
-     * refer request.JSON
+     * FOR JSON Payload refer request.json
      * @param orderRequest
      * @return
      */
-    @PostMapping("/placeOrder")
+    @PostMapping("/placeOrder") //http://localhost:8080/placeOrder
     public Customer placeOrder(@RequestBody OrderRequest orderRequest){
         return customerRepo.save(orderRequest.getCustomer());
     }

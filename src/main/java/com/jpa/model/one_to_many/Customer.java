@@ -1,12 +1,9 @@
 package com.jpa.model.one_to_many;
 
 
-import lombok.ToString;
-
 import javax.persistence.*;
 import java.util.List;
 
-@ToString
 @Entity
 public class Customer {
 
