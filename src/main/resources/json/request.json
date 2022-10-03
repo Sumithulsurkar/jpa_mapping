@@ -9,21 +9,18 @@
         "productName":"Iphone 14",
         "qty":10,
         "price":130000
-
       },
       {
         "pid":102,
         "productName":"Samsung S10",
         "qty":11,
         "price":72000
-
       },
       {
         "pid":103,
         "productName":"Google Pixel 6",
         "qty":16,
         "price":98000
-
       }
     ]
   }
