@@ -1,6 +1,7 @@
 package com.jpa.controller.parser;
 
 import com.jpa.model.parser.CustomerModel;
+import com.jpa.model.parser.StudentModel;
 import com.jpa.service.many_to_many.parser.JSONParserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,5 +35,10 @@ public class JSONParserController {
     @GetMapping("/getCustomerProductsDataWithCustCols")
     public List<CustomerModel> getCustomerProductsDataWithCustCols(){
         return jsonParserService.getCustProdDataWithCustomCols();
+    }
+
+    @GetMapping("/getstdCrsData")
+    public List<StudentModel> getStudentCourseData(){
+        return jsonParserService.getStdCourseData();
     }
 }

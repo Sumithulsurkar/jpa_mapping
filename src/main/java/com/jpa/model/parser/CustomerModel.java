@@ -13,6 +13,7 @@ public class CustomerModel {
     private String name;
     private String email;
     private String gender;
+    private int nop;
 
     public int getNop() {
         return nop;
@@ -23,8 +24,6 @@ public class CustomerModel {
     }
 
     private List<ProductModel> products;
-
-    private int nop;
 
     // Getter Methods
 

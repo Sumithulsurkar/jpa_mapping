@@ -1,15 +1,15 @@
 package com.jpa.service.many_to_many.parser;
 
+import com.jpa.model.many_to_many.Course;
+import com.jpa.model.many_to_many.Student;
 import com.jpa.model.one_to_many.Customer;
 import com.jpa.model.one_to_many.Product;
-import com.jpa.model.parser.CustomerModel;
-import com.jpa.model.parser.CustomerResponse;
-import com.jpa.model.parser.ProductModel;
+import com.jpa.model.parser.*;
+import com.jpa.repository.many_to_many.StudentRepo;
 import com.jpa.repository.parser.JSONParserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.Collator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -20,6 +20,9 @@ public class JSONParserService {
 
     @Autowired
     JSONParserRepo jsonParserRepo;
+
+    @Autowired
+    StudentRepo studentRepo;
 
     /**
      * Custom handling of Columns for JSON response
@@ -86,5 +89,42 @@ public class JSONParserService {
             customerModels.add(customerModel1);
         });
         return customerModels;
+    }
+
+    public List<StudentModel> getStdCourseData() {
+        List<Student> allStudentList = studentRepo.findAll();
+
+        //private double totalCourseCost;
+        List<StudentModel> studentModelList = new ArrayList<>();
+
+        for (Student std : allStudentList){
+            StudentModel stdObj = new StudentModel();
+            stdObj.setId(std.getId());
+            stdObj.setName(std.getName());
+            stdObj.setAge(std.getAge());
+            stdObj.setDept(std.getDept());
+
+            List<CoursesModel> allCoursesList = new ArrayList<>();
+            double totalCourseCost = 0;
+
+            for (Course crs : std.getCourse()){
+                CoursesModel crsObj = new CoursesModel();
+                crsObj.setId(crs.getId());
+                crsObj.setTitle(crs.getTitle());
+                crsObj.setModules(crs.getModules());
+                crsObj.setAbbreviation(crs.getAbbreviation());
+                crsObj.setFee(crs.getFee());
+                totalCourseCost += crsObj.getFee();
+                stdObj.setTotalCourseCost(totalCourseCost);
+                allCoursesList.add(crsObj);
+            }
+            studentModelList.add(stdObj);
+            stdObj.setCourses(allCoursesList);
+        }
+        /*studentModelList.stream().forEach(studentModel -> {
+            studentModel.getId(), studentModel.getName(), studentModel.getAge(),
+                    studentModel.getDept()
+        });*/
+        return studentModelList;
     }
 }
